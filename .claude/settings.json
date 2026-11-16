@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "statusMessage": "Running smoke check",
+            "command": "cd \"${CLAUDE_PROJECT_DIR:-.}\" && test -s index.html && test -s daniel-hartwell/index.html || { echo \"index.html / daniel-hartwell/index.html smoke check failed. Fix the failures before stopping.\" >&2; exit 2; }"
+          }
+        ]
+      }
+    ]
+  }
+}
